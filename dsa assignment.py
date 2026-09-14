@@ -61,20 +61,56 @@ print(num1)
 #5. Find the Missing Number
 #An array contains numbers from 1 to N, but one number is missing. Find the missing number.
 
-num = [1,2,3,4,6]
+num = [1,2,3,4,5,7]
 num1 = 0
 
 for i in range(len(num)):
-    num1+=num[i+1]
-num1 = num1/len(num)
+    num1 += num[i]
+
+n = len(num) + 1
+
+num2 = n * (n + 1) //2
+
+missing = num2 - num1
+
+print("Missing Number:",missing)
+
+
+#6. Rotate an Array
+#Write a program to rotate an array to the right by K positions.
+
+
+        
+num = [1,2,3,4,5]
+num1 = []
+
+#k = int(input("value for rotate: ")
+k=2
+for i in range(-k,len(num)-k):
+    num1.append(num[i])
 
 print(num1)
+
+
+#7. Find the Most Frequent Element
+#Write a program to find the element that occurs the maximum number of times in an array.(refered chatgpt)
+
+
+num = [1,2,3,4,5,3,4,3,3]
+count_max = 0
+
+
+for i in range(len(num)):
+    count = 0
+    for j in range(len(num)):
+        if num[i] == num[j]:
+            count+=1
+    if count > count_max:
+        count_max = count
+        num1 = num[i]
+print("Most frequent element:",num1)  
+print("Frequency:",count_max)
         
-        
-
-
-
-
 
 
 
