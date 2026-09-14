@@ -110,11 +110,70 @@ for i in range(len(num)):
         num1 = num[i]
 print("Most frequent element:",num1)  
 print("Frequency:",count_max)
+
+
+#8. Maximum Subarray Sum
+#Write a program to find the maximum sum of a contiguous subarray.(refered chatgpt)
         
 
+num = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+max_sum = num[0]
+max_subarray = []
+
+for i in range(len(num)):
+    current_sum = 0
+    current_subarray = []
+
+    for j in range(i, len(num)):
+        current_sum += num[j]
+        current_subarray.append(num[j])
+
+        if current_sum > max_sum:
+            max_sum = current_sum
+            max_subarray = current_subarray.copy()
+
+print("Maximum Subarray Sum:", max_sum)
+print("Subarray:", max_subarray)
 
 
 
+
+
+
+#9. Check Whether Two Arrays are Equal
+#Given two arrays, check whether they contain the same elements with the same frequency,
+#regardless of their order.(slightly refers chatgpt)
+
+list1 = [1, 2, 2, 3, 4]
+list2 = [4, 2, 1, 2, 3]
+
+if len(list1) != len(list2):
+    print("Not Equal")
+else:
+    equal = True
+
+    for i in range(len(list1)):
+        count1 = 0
+        count2 = 0
+
+        for j in range(len(list1)):
+            if list1[i] == list1[j]:
+                count1 += 1
+
+        for j in range(len(list2)):
+            if list1[i] == list2[j]:
+                count2 += 1
+
+        if count1 != count2:
+            equal = False
+            break
+
+    if equal:
+        print("Arrays are Equal")
+    else:
+        print("Not Equal")
+                
 
 
 
