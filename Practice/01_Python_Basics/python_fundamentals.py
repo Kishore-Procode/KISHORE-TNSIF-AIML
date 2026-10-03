@@ -1,32 +1,20 @@
-# ============================================================
-# PYTHON FUNDAMENTALS - PRACTICE
-# Topic: Variables, Data Types, Operators, Conditionals, Loops
-# Date: 2026-09-15
-# ============================================================
+# python basics practice - variables, loops, conditionals, functions
 
-
-# ----------------------------------------------------------
-# 1. VARIABLES & DATA TYPES
-# ----------------------------------------------------------
-
+# variables and types
 name = "Kishore"
 age = 21
 height = 5.9
 is_student = True
 
-print("Name:", name, "| Type:", type(name))
-print("Age:", age, "| Type:", type(age))
-print("Height:", height, "| Type:", type(height))
-print("Is Student:", is_student, "| Type:", type(is_student))
+print("name:", name, "| type:", type(name))
+print("age:", age, "| type:", type(age))
+print("height:", height, "| type:", type(height))
+print("is student:", is_student, "| type:", type(is_student))
 
 
-# ----------------------------------------------------------
-# 2. ARITHMETIC OPERATORS
-# ----------------------------------------------------------
-
+# arithmetic operators
 a, b = 15, 4
 
-print("\n--- Arithmetic Operators ---")
 print(f"{a} + {b} = {a + b}")
 print(f"{a} - {b} = {a - b}")
 print(f"{a} * {b} = {a * b}")
@@ -36,28 +24,23 @@ print(f"{a} % {b} = {a % b}")
 print(f"{a} ** {b} = {a ** b}")
 
 
-# ----------------------------------------------------------
-# 3. CONDITIONAL STATEMENTS
-# ----------------------------------------------------------
-
-# Check if a number is even or odd
+# even or odd check
 num = 17
-print("\n--- Conditionals ---")
 if num % 2 == 0:
-    print(f"{num} is Even")
+    print(f"{num} is even")
 else:
-    print(f"{num} is Odd")
+    print(f"{num} is odd")
 
-# Find the largest of three numbers
+# largest of three
 x, y, z = 45, 78, 32
 if x > y and x > z:
-    print(f"Largest: {x}")
+    print(f"largest: {x}")
 elif y > x and y > z:
-    print(f"Largest: {y}")
+    print(f"largest: {y}")
 else:
-    print(f"Largest: {z}")
+    print(f"largest: {z}")
 
-# Grade calculator
+# grade calculator
 marks = 82
 if marks >= 90:
     grade = "A+"
@@ -69,59 +52,51 @@ elif marks >= 60:
     grade = "C"
 else:
     grade = "F"
-print(f"Marks: {marks} → Grade: {grade}")
+print(f"marks: {marks} -> grade: {grade}")
 
 
-# ----------------------------------------------------------
-# 4. LOOPS - FOR LOOP
-# ----------------------------------------------------------
+# for loops
 
-print("\n--- For Loops ---")
-
-# Print numbers 1 to 10
-print("Numbers 1 to 10:", end=" ")
+# print 1 to 10
+print("numbers 1 to 10:", end=" ")
 for i in range(1, 11):
     print(i, end=" ")
 print()
 
-# Sum of first N natural numbers
+# sum of first n numbers
 n = 20
 total = 0
 for i in range(1, n + 1):
     total += i
-print(f"Sum of 1 to {n}: {total}")
+print(f"sum of 1 to {n}: {total}")
 
-# Multiplication table
+# multiplication table
 num = 7
-print(f"\nMultiplication table of {num}:")
+print(f"\nmultiplication table of {num}:")
 for i in range(1, 11):
-    print(f"  {num} × {i} = {num * i}")
+    print(f"  {num} x {i} = {num * i}")
 
-# Count even numbers in a range
+# count even numbers
 n = 50
 even_count = 0
 for i in range(1, n + 1):
     if i % 2 == 0:
         even_count += 1
-print(f"\nEven numbers from 1 to {n}: {even_count}")
+print(f"\neven numbers from 1 to {n}: {even_count}")
 
 
-# ----------------------------------------------------------
-# 5. LOOPS - WHILE LOOP
-# ----------------------------------------------------------
+# while loops
 
-print("\n--- While Loops ---")
-
-# Factorial of a number
+# factorial
 num = 6
 factorial = 1
 i = 1
 while i <= num:
     factorial *= i
     i += 1
-print(f"Factorial of {num}: {factorial}")
+print(f"factorial of {num}: {factorial}")
 
-# Reverse a number
+# reverse a number
 original = 12345
 reversed_num = 0
 temp = original
@@ -129,23 +104,19 @@ while temp > 0:
     digit = temp % 10
     reversed_num = reversed_num * 10 + digit
     temp //= 10
-print(f"Reverse of {original}: {reversed_num}")
+print(f"reverse of {original}: {reversed_num}")
 
-# Sum of digits
+# sum of digits
 num = 9876
 digit_sum = 0
 temp = num
 while temp > 0:
     digit_sum += temp % 10
     temp //= 10
-print(f"Sum of digits of {num}: {digit_sum}")
+print(f"sum of digits of {num}: {digit_sum}")
 
 
-# ----------------------------------------------------------
-# 6. PRIME NUMBER CHECK
-# ----------------------------------------------------------
-
-print("\n--- Prime Number Check ---")
+# prime check
 num = 29
 is_prime = True
 if num < 2:
@@ -155,34 +126,24 @@ else:
         if num % i == 0:
             is_prime = False
             break
-print(f"{num} is {'Prime' if is_prime else 'Not Prime'}")
+print(f"{num} is {'prime' if is_prime else 'not prime'}")
 
 
-# ----------------------------------------------------------
-# 7. PATTERN PRINTING
-# ----------------------------------------------------------
-
-print("\n--- Star Pattern ---")
+# pattern printing
 rows = 5
 for i in range(1, rows + 1):
     print("* " * i)
 
-print("\n--- Number Triangle ---")
+print()
 for i in range(1, rows + 1):
     for j in range(1, i + 1):
         print(j, end=" ")
     print()
 
 
-# ----------------------------------------------------------
-# 8. FUNCTIONS
-# ----------------------------------------------------------
-
-print("\n--- Functions ---")
-
+# functions
 
 def is_palindrome(num):
-    """Check if a number is a palindrome."""
     original = num
     reversed_num = 0
     while num > 0:
@@ -190,9 +151,7 @@ def is_palindrome(num):
         num //= 10
     return original == reversed_num
 
-
 def fibonacci(n):
-    """Generate fibonacci series up to n terms."""
     series = []
     a, b = 0, 1
     for _ in range(n):
@@ -200,27 +159,22 @@ def fibonacci(n):
         a, b = b, a + b
     return series
 
-
 print(f"121 is palindrome: {is_palindrome(121)}")
 print(f"123 is palindrome: {is_palindrome(123)}")
-print(f"Fibonacci (10 terms): {fibonacci(10)}")
+print(f"fibonacci (10 terms): {fibonacci(10)}")
 
 
-# ----------------------------------------------------------
-# 9. STRING OPERATIONS
-# ----------------------------------------------------------
-
-print("\n--- String Operations ---")
+# string operations
 text = "Hello, Python!"
 
-print(f"Original: {text}")
-print(f"Uppercase: {text.upper()}")
-print(f"Lowercase: {text.lower()}")
-print(f"Length: {len(text)}")
-print(f"Reversed: {text[::-1]}")
-print(f"Word count: {len(text.split())}")
-print(f"Replace: {text.replace('Python', 'World')}")
+print(f"original: {text}")
+print(f"uppercase: {text.upper()}")
+print(f"lowercase: {text.lower()}")
+print(f"length: {len(text)}")
+print(f"reversed: {text[::-1]}")
+print(f"word count: {len(text.split())}")
+print(f"replace: {text.replace('Python', 'World')}")
 
-# Count vowels
+# count vowels
 vowels = sum(1 for ch in text.lower() if ch in 'aeiou')
-print(f"Vowel count: {vowels}")
+print(f"vowel count: {vowels}")
